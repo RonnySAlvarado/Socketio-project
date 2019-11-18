@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 
+import Linegraph from "./Linegraph";
+
 const Dashboard = () => {
   const [socketUrl, setSocketUrl] = useState("http://localhost:5000");
   const [data, setData] = useState([]);
@@ -25,13 +27,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      {data.map(info => {
-        return (
-          <h2>
-            {info.value}, {info.timestamp}
-          </h2>
-        );
-      })}
+      <Linegraph data={data} />
     </div>
   );
 };
