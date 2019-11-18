@@ -1,3 +1,4 @@
+// module imports
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
@@ -44,7 +45,6 @@ const LandingContainer = styled.div`
     color: white;
   }
   a {
-    // animation: ${fadein} ease 5s;
     margin-top: 20px;
     border: 2px solid white;
     border-radius: 50px;

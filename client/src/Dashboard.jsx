@@ -1,11 +1,16 @@
+// module imports
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
+import Loader from "react-loader-spinner";
 
+// file imports
 import Linegraph from "./Linegraph";
+import Bargraph from "./Bargraph";
 
 const Dashboard = () => {
   const [socketUrl, setSocketUrl] = useState("http://localhost:5000");
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const socket = socketIOClient(socketUrl);
@@ -19,17 +24,28 @@ const Dashboard = () => {
       res.timestamp = new Date(res.timestamp).toTimeString().split(" ")[0];
       // Spreading existing data and adding the response to the end of it
       setData([...data, res]);
+      if (loading) {
+        setLoading(false);
+      }
     });
+
     return () => {
       socket.close(); // clean up for when we disconnect
     };
   }, [data]);
 
-  return (
-    <div>
-      <Linegraph data={data} />
-    </div>
-  );
+  if (loading) {
+    return (
+      <Loader type="BallTriangle" color="#00BFFF" height={100} width={100} />
+    );
+  } else {
+    return (
+      <div>
+        <Linegraph data={data} />
+        <Bargraph data={data} />
+      </div>
+    );
+  }
 };
 
 export default Dashboard;

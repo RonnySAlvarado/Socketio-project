@@ -8,6 +8,7 @@ import Landing from "./Landing";
 import Dashboard from "./Dashboard";
 
 function App() {
+  // Implemented 2 components that will mount depending on the route accessed.
   return (
     <AppContainer>
       <Route exact path="/" component={Landing} />
@@ -17,16 +18,6 @@ function App() {
 }
 
 export default App;
-
-// This is fading in the Corva logo image and text in 5 seconds
-// const fadein = keyframes`
-//     0% {
-//         opacity:0;
-//     }
-//   100% {
-//     opacity:1;
-//   }
-// `;
 
 const AppContainer = styled.div`
   height: 98vh;
