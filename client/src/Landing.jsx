@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 const Landing = () => {
@@ -7,6 +8,7 @@ const Landing = () => {
       <img className="logo" src="/corvalogo.png" alt="Corva Logo" />
       <h2>Welcome to</h2>
       <img src="/CORVA_logo_dark.png" alt="Corva Logo2" />
+      <Link to="/dashboard">Enter Here</Link>
     </LandingContainer>
   );
 };
@@ -41,4 +43,20 @@ const LandingContainer = styled.div`
     width: 50%;
     color: white;
   }
+  a {
+    // animation: ${fadein} ease 5s;
+    margin-top: 20px;
+    border: 2px solid white;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    padding: 20px 50px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Alata", sans-serif;
+    cursor: pointer;
+    &:hover {
+      background: white;
+      color: black;
+    }
 `;
