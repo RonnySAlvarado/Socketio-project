@@ -122,7 +122,6 @@ const Bargraph = ({ data }) => {
           return bar;
         }
       });
-      console.log(result);
       setCount(result);
     }
   }, [data]);

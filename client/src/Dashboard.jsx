@@ -6,11 +6,14 @@ import Loader from "react-loader-spinner";
 // file imports
 import Linegraph from "./Linegraph";
 import Bargraph from "./Bargraph";
+import Threshold from "./Threshold";
 
 const Dashboard = () => {
-  const [socketUrl, setSocketUrl] = useState("http://localhost:5000");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [threshold, setThreshold] = useState(null);
+
+  const socketUrl = "http://localhost:5000";
 
   useEffect(() => {
     const socket = socketIOClient(socketUrl);
@@ -24,6 +27,9 @@ const Dashboard = () => {
       res.timestamp = new Date(res.timestamp).toTimeString().split(" ")[0];
       // Spreading existing data and adding the response to the end of it
       setData([...data, res]);
+      /* By default, the Loader component will be rendered as the initial state for it is true. Once we have received some data,
+      loading will be set to false and will render out the chart components.
+      */
       if (loading) {
         setLoading(false);
       }
@@ -41,7 +47,8 @@ const Dashboard = () => {
   } else {
     return (
       <div>
-        <Linegraph data={data} />
+        <Threshold setThreshold={setThreshold} />
+        <Linegraph data={data} threshold={threshold} />
         <Bargraph data={data} />
       </div>
     );

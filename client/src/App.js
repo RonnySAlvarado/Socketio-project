@@ -1,7 +1,7 @@
 // module imports
 import React from "react";
-import styled, { keyframes } from "styled-components";
-import { Route, Link } from "react-router-dom";
+import styled from "styled-components";
+import { Route } from "react-router-dom";
 
 // file imports
 import Landing from "./Landing";
