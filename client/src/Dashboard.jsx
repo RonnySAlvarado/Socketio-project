@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 import Loader from "react-loader-spinner";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // file imports
 import Linegraph from "./Linegraph";
@@ -16,6 +18,28 @@ const Dashboard = () => {
   const socketUrl = "http://localhost:5000";
 
   useEffect(() => {
+    /*
+      This is the configuration of the toast/snackbar. First we have to check a few conditions before receiving the error:
+      1) There must be something inside data. Hence why we check for length.
+      2) Don't worry about threshold if the value is null. 
+      3) If threshold has a number, compare it with the last value that came in from the data array. 
+      If that value is greater than the threshold, render the toast.
+    */
+    if (
+      data.length > 0 &&
+      threshold !== null &&
+      data[data.length - 1].value > threshold
+    ) {
+      toast.error(
+        <>
+          <h3>Warning: Threshold exceeded.</h3>
+          <h3>{`Value: ${data[data.length - 1].value}`}</h3>
+        </>,
+        {
+          position: toast.POSITION.BOTTOM_RIGHT
+        }
+      );
+    }
     const socket = socketIOClient(socketUrl);
     // This will look for the event that's being emitted called "data" -> emphasis that the string MUST match was is listed in the backend
     socket.on("data", res => {
@@ -34,7 +58,6 @@ const Dashboard = () => {
         setLoading(false);
       }
     });
-
     return () => {
       socket.close(); // clean up for when we disconnect
     };
@@ -50,6 +73,7 @@ const Dashboard = () => {
         <Threshold setThreshold={setThreshold} />
         <Linegraph data={data} threshold={threshold} />
         <Bargraph data={data} />
+        <ToastContainer autoClose={3000} hideProgressBar={true} />
       </div>
     );
   }

@@ -12,7 +12,7 @@ import {
 const Linegraph = ({ data, threshold }) => {
   const [lineData, setLineData] = useState([]);
   /*
-  1) This is the incoming array "data" & an integer "threshold" (initial value as null) as props with objects containing value 
+  1) This is the incoming array "data" & an integer "threshold" (initial value as null) as props. "Data" is an array of objects containing value 
   and timestamp as keys utilizing the Recharts.js package to use their components to render data. 
   2) The Line component is referencing "value" and "thresholdVal" within the dataKey prop to plot the points and connect. 
   3) Since the LineChart component actually needs to use only 1 data set, we had to combine both the threshold and the data array together,
