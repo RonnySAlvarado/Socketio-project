@@ -35,6 +35,8 @@ export const InputContainer = styled.div`
   justify-content: center;
   margin-left: 60px;
   h2 {
+    text-align: center;
+    font-size: 20px;
     color: red;
   }
   @media (max-width: 800px) {

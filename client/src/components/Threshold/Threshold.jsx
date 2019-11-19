@@ -40,18 +40,30 @@ const Threshold = ({ setThreshold }) => {
         <Input
           placeholder="Enter a threshold between -100 and 100"
           value={input}
-          onChange={e => setInput(e.target.value)}
+          onChange={e => {
+            if (error) {
+              setError(false);
+            }
+            setInput(e.target.value);
+          }}
         />
         {Number(input) < -100 || Number(input) > 100 ? (
           <h2>Must enter value between -100 and 100</h2>
         ) : null}
         {isNaN(input) && input !== "-" ? (
-          <h2>Must contain only numbers. No characters.</h2>
+          <>
+            <h2>
+              Must contain only numbers.
+              <br />
+              No characters.
+            </h2>
+          </>
         ) : null}
         {error ? (
           <h2>
-            Cannot submit. Input contains either values outside of allowed range
-            OR unknown characters.
+            Cannot submit. <br />
+            Input contains either values outside of allowed range OR unknown
+            characters.
           </h2>
         ) : null}
         <ButtonContainer>
