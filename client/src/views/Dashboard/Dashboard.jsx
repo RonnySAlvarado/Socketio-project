@@ -16,7 +16,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [threshold, setThreshold] = useState(null);
 
-  const socketUrl = "http://localhost:5000";
+  const socketUrl = "https://websocket-backend1.herokuapp.com/";
 
   useEffect(() => {
     /*
