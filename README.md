@@ -1,27 +1,81 @@
-# Task Delivery
+# Who am I?
+
+Ronny Alvarado, environmental geologist and full stack software engineer.
+GitHub: https://github.com/RonnySAlvarado
+LinkedIn: https://www.linkedin.com/in/ronnysalvarado/
+
+# Tech Stack
+
+1. React / React Hooks
+2. React Router
+3. Styled-Components
+4. Recharts
+5. React Toastify
+6. React Loader Spinner
+
+# Front End Module Installation
+
+Must cd into the "client" folder. Then,
+
 ```diff
-- Please don’t fork/branch or create pull-request from the repository. 
+yarn install
+```
+
+# Start the React client
+
+Must cd into the "client" folder. Then,
+
+```diff
+yarn start
+```
+
+# Back End Module Installation
+
+Must be at the root of the project. Then,
+
+```diff
+yarn install
+```
+
+# Start the backend server
+
+Must be at the root of the project. Then,
+
+```diff
+yarn start
+```
+
+or
+
+```diff
+yarn server
+```
+
+# Task Delivery
+
+```diff
+- Please don’t fork/branch or create pull-request from the repository.
 - Clone it and email your solution back to us when you’re done.
 ```
 
 # Task Description
-You have a server which returns random numbers via WebSocket ([socket.io](https://socket.io)) connection.
 
+You have a server which returns random numbers via WebSocket ([socket.io](https://socket.io)) connection.
 
 You should implement the next:
 
 1. A line chart:
-    - **x-axis**: time of a received number (look at `timestamp` payload field)
-    - **y-axis**: number values
+   - **x-axis**: time of a received number (look at `timestamp` payload field)
+   - **y-axis**: number values
 2. A bar chart:
-    - **x-axis**: range categories (e.g. `-10 - 0`, `0 - 10`, `10 - 20` etc)
-    - **y-axis**: the amount of numbers in each category
-3. (Optional) An input called *"Alert threshold"*:
-    - a user should be able to enter a number
-    - if the random number received from the server is greater than the threshold - show an alert toast / snackbar with the number as the payload
+   - **x-axis**: range categories (e.g. `-10 - 0`, `0 - 10`, `10 - 20` etc)
+   - **y-axis**: the amount of numbers in each category
+3. (Optional) An input called _"Alert threshold"_:
+   - a user should be able to enter a number
+   - if the random number received from the server is greater than the threshold - show an alert toast / snackbar with the number as the payload
 4. Design: we appreciate your own design decisions =)
 
-Charts should be updated in real time. **Please**, consider code style best practices. 
+Charts should be updated in real time. **Please**, consider code style best practices.
 
 # Limitations
 
@@ -38,7 +92,7 @@ Charts should be updated in real time. **Please**, consider code style best prac
 3. Add `.env` file with the specified PORT (`3000` by default) env variable (look at `.env.sample` file)
 4. Run `yarn start` / `npm start`
 5. Now you can connect to the server via [socket.io-client](https://socket.io/docs/client-api):
-    - listen for `data` event
-    - the payload format is `{ value: <float>, timestamp: <integer> }`
+   - listen for `data` event
+   - the payload format is `{ value: <float>, timestamp: <integer> }`
 
 # Good luck!
