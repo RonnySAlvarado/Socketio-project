@@ -6,9 +6,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // file imports
-import Linegraph from "./Linegraph";
-import Bargraph from "./Bargraph";
-import Threshold from "./Threshold";
+import Linegraph from "../../components/Linegraph/Linegraph";
+import Bargraph from "../../components/Bargraph/Bargraph";
+import Threshold from "../../components/Threshold/Threshold";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);

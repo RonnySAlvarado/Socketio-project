@@ -1,22 +1,5 @@
-// module imports
-import React from "react";
-import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
-const Landing = () => {
-  return (
-    <LandingContainer>
-      <img className="logo" src="/corvalogo.png" alt="Corva Logo" />
-      <h2>Welcome to</h2>
-      <img src="/CORVA_logo_dark.png" alt="Corva Logo2" />
-      <Link to="/dashboard">Enter Here</Link>
-    </LandingContainer>
-  );
-};
-
-export default Landing;
-
-// This is fading in the Corva logo image and text in 5 seconds
 const fadein = keyframes`
     0% {
         opacity:0;
@@ -26,7 +9,7 @@ const fadein = keyframes`
   }
 `;
 
-const LandingContainer = styled.div`
+export const LandingContainer = styled.div`
   animation: ${fadein} ease 5s;
   display: flex;
   flex-direction: column;

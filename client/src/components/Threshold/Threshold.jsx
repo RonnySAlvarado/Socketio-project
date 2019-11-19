@@ -1,6 +1,14 @@
 // module imports
 import React, { useState } from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
+
+// style imports
+import {
+  Input,
+  Button,
+  InputContainer,
+  ButtonContainer
+} from "./ThresholdStyles";
 
 const Threshold = ({ setThreshold }) => {
   // setThreshold is going to set the parent threshold variable in Dashboard.jsx
@@ -61,49 +69,49 @@ const Threshold = ({ setThreshold }) => {
 
 export default Threshold;
 
-const Input = styled.input`
-  width: 300px;
-  height: 50px;
-  border: 1px solid black;
-  border-radius: 10px;
-`;
+// const Input = styled.input`
+//   width: 300px;
+//   height: 50px;
+//   border: 1px solid black;
+//   border-radius: 10px;
+// `;
 
-const Button = styled.button`
-  width: 100px;
-  height: 50px;
-  margin-top: 10px;
-  color: white;
-  border-radius: 10px;
-  border: 1px solid black;
-`;
+// const Button = styled.button`
+//   width: 100px;
+//   height: 50px;
+//   margin-top: 10px;
+//   color: white;
+//   border-radius: 10px;
+//   border: 1px solid black;
+// `;
 
-const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-left: 60px;
-  h2 {
-    color: red;
-  }
-`;
+// const InputContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   margin-left: 60px;
+//   h2 {
+//     color: red;
+//   }
+// `;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  width: 300px;
-  .submit {
-    background: #4ce44c;
-    &:hover {
-      background: green;
-      cursor: pointer;
-    }
-  }
-  .remove {
-    background: #ff6666;
-    &:hover {
-      background: red;
-      cursor: pointer;
-    }
-  }
-`;
+// const ButtonContainer = styled.div`
+//   display: flex;
+//   justify-content: space-evenly;
+//   width: 300px;
+//   .submit {
+//     background: #4ce44c;
+//     &:hover {
+//       background: green;
+//       cursor: pointer;
+//     }
+//   }
+//   .remove {
+//     background: #ff6666;
+//     &:hover {
+//       background: red;
+//       cursor: pointer;
+//     }
+//   }
+// `;

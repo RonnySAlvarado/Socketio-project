@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { Route } from "react-router-dom";
 
 // file imports
-import Landing from "./Landing";
-import Dashboard from "./Dashboard";
+import Landing from "./views/Landing/Landing";
+import Dashboard from "./views/Dashboard/Dashboard";
 
 function App() {
   // Implemented 2 components that will mount depending on the route accessed.
