@@ -8,4 +8,7 @@ export const AppContainer = styled.div`
   align-items: center;
   justify-content: center;
   }
+  @media (max-width: 500px){
+      justify-content: flex-start;
+  }
 `;

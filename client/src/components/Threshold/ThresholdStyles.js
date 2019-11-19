@@ -5,6 +5,9 @@ export const Input = styled.input`
   height: 50px;
   border: 1px solid black;
   border-radius: 10px;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.button`
@@ -14,9 +17,18 @@ export const Button = styled.button`
   color: white;
   border-radius: 10px;
   border: 1px solid black;
+  @media (max-width: 800px) {
+    border-radius: 1px;
+    width: 50%;
+    margin-top: 0;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const InputContainer = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +36,10 @@ export const InputContainer = styled.div`
   margin-left: 60px;
   h2 {
     color: red;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+    margin-left: 0px;
   }
 `;
 
@@ -44,5 +60,11 @@ export const ButtonContainer = styled.div`
       background: red;
       cursor: pointer;
     }
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    flex-direction: column;
   }
 `;

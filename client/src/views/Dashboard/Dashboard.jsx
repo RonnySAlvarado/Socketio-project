@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Linegraph from "../../components/Linegraph/Linegraph";
 import Bargraph from "../../components/Bargraph/Bargraph";
 import Threshold from "../../components/Threshold/Threshold";
+import { DashboardContainer } from "./DashboardStyle";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -69,12 +70,14 @@ const Dashboard = () => {
     );
   } else {
     return (
-      <div>
-        <Threshold setThreshold={setThreshold} />
-        <Linegraph data={data} threshold={threshold} />
-        <Bargraph data={data} />
+      <>
+        <DashboardContainer>
+          <Threshold setThreshold={setThreshold} />
+          <Linegraph data={data} threshold={threshold} />
+          <Bargraph data={data} />
+        </DashboardContainer>
         <ToastContainer autoClose={3000} hideProgressBar={true} />
-      </div>
+      </>
     );
   }
 };

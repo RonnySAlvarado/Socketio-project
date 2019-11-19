@@ -1,6 +1,14 @@
 // module imports
 import React, { useState, useEffect } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer
+} from "recharts";
 
 const Bargraph = ({ data }) => {
   // Per the Recharts "SimpleBarChart" example -> http://recharts.org/en-US/examples/SimpleBarChart
@@ -117,7 +125,7 @@ const Bargraph = ({ data }) => {
           data[data.length - 1].value >= parseInt(range[0]) &&
           data[data.length - 1].value <= parseInt(range[1])
         ) {
-          return { ...bar, value: bar.value + 1 };
+          return { ...bar, value: ++bar.value };
         } else {
           return bar;
         }
@@ -127,13 +135,15 @@ const Bargraph = ({ data }) => {
   }, [data]);
 
   return (
-    <BarChart width={800} height={300} data={count}>
-      <XAxis stroke="black" dataKey="name" />
-      <YAxis stroke="black" />
-      <Tooltip />
-      <Legend margin="20px" />
-      <Bar type="monotone" dataKey="value" barSize={30} fill="#8884d8" />
-    </BarChart>
+    <ResponsiveContainer height={300} width="100%">
+      <BarChart data={count}>
+        <XAxis stroke="black" dataKey="name" />
+        <YAxis stroke="black" />
+        <Tooltip />
+        <Legend margin="20px" />
+        <Bar type="monotone" dataKey="value" barSize={30} fill="#8884d8" />
+      </BarChart>
+    </ResponsiveContainer>
   );
 };
 
