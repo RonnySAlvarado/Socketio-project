@@ -1,6 +1,5 @@
 // module imports
 import React from "react";
-import styled from "styled-components";
 import { Route } from "react-router-dom";
 
 // file imports
