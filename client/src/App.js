@@ -6,6 +6,7 @@ import { Route } from "react-router-dom";
 // file imports
 import Landing from "./views/Landing/Landing";
 import Dashboard from "./views/Dashboard/Dashboard";
+import { AppContainer } from "./AppContainerStyle";
 
 function App() {
   // Implemented 2 components that will mount depending on the route accessed.
@@ -18,13 +19,3 @@ function App() {
 }
 
 export default App;
-
-const AppContainer = styled.div`
-  height: 98vh;
-  background: linear-gradient(#087475, #152b40);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  }
-`;
