@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Linegraph from "../../components/Linegraph/Linegraph";
 import Bargraph from "../../components/Bargraph/Bargraph";
 import Threshold from "../../components/Threshold/Threshold";
-import { DashboardContainer } from "./DashboardStyle";
+import { DashboardContainer, LoaderContainer } from "./DashboardStyle";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -66,7 +66,9 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <Loader type="BallTriangle" color="#00BFFF" height={100} width={100} />
+      <LoaderContainer>
+        <Loader type="BallTriangle" color="#00BFFF" height={100} width={100} />
+      </LoaderContainer>
     );
   } else {
     return (

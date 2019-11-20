@@ -15,3 +15,9 @@ width: 100%;
     justify-content: flex-start;
 }
 `;
+
+export const LoaderContainer = styled.div`
+  @media (max-width: 800px) {
+    margin-top: 25%;
+  }
+`;

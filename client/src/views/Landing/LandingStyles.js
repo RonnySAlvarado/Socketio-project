@@ -1,5 +1,7 @@
+// module imports
 import styled, { keyframes } from "styled-components";
 
+// This will load in the landing page animations and components
 const fadein = keyframes`
     0% {
         opacity:0;
@@ -42,4 +44,8 @@ export const LandingContainer = styled.div`
       background: white;
       color: black;
     }
+  }
+  @media (max-width: 800px) {
+    margin-top: 25%;
+  }
 `;
