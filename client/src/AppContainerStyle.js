@@ -7,8 +7,7 @@ export const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  }
-  @media (max-width: 500px){
-      justify-content: flex-start;
+  @media (max-width: 500px) {
+    justify-content: flex-start;
   }
 `;
