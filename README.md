@@ -4,6 +4,10 @@ Ronny Alvarado, environmental geologist and full stack software engineer.
 GitHub: https://github.com/RonnySAlvarado  
 LinkedIn: https://www.linkedin.com/in/ronnysalvarado/
 
+# Deployed Project
+
+https://websocket-data-charts-renderer.netlify.com/
+
 # Tech Stack
 
 1. React / React Hooks
