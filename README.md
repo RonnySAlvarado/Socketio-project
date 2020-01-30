@@ -17,40 +17,54 @@ https://websocket-data-charts-renderer.netlify.com/
 5. React Toastify
 6. React Loader Spinner
 7. Socket-io Client
+8. React Testing Library
 
 # Project Setup
 
 In order to begin running this application, there are a few steps that must be taken.
 
 ### Step 1
-Assuming you have this repository cloned and on your local machine, you must install the project depencies at the root of the project as well as within the `client` folder. You may install them with the following:  
+
+Assuming you have this repository cloned and on your local machine, you must install the project dependencies at the root of the project as well as within the `client` folder. You may install them with the following:
+
 ```
 yarn install
 ```
+
 or
+
 ```
 npm install
 ```
 
 ### Step 2
-Once dependencies have been installed, you will have to run the React client. Proceed to cd into the `client` folder and then run the following:  
+
+Once dependencies have been installed, you will have to run the React client. Proceed to cd into the `client` folder and then run the following:
+
 ```
 yarn start
 ```
+
 or
+
 ```
 npm run start
 ```
 
 ### Step 3
+
 Once the React client is finished loading, enjoy the content! See below for instructions on how to use the app.
 
 ### Step 4 (optional)
+
 If you decide you want to test the server locally, you may also go to the root of the project and run the following:
+
 ```
 yarn start
 ```
+
 or
+
 ```
 npm run start
 ```
@@ -58,23 +72,26 @@ npm run start
 # Functionality of the app and how to use it
 
 ### Landing page
+
 Upon entering the site, the contents of the page will fade in (5 seconds) and will render a button that will allow you to access the `/dashboard` page. This page will consist of the application itself.
 
 ### Dashboard
-Upon clicking the button, a socket.io connection will be established and listening for emits and a `Loader` component will render and will render until the first data point comes in from our backend. Once that data point comes in, the `Loader` component will unmount and our graphs components will mount. 
+
+Upon clicking the button, a socket.io connection will be established and listening for emits and a `Loader` component will render and will render until the first data point comes in from our backend. Once that data point comes in, the `Loader` component will unmount and our graphs components will mount.
 
 ### Linegraph, Threshold, and Toast/Snackbar
-This graph will show an X-axis that consists of a timestamp and the Y-axis will consist the incoming data value coming in. The incoming data values come in at random intervals with random numbers (constraints on these are located within the backend). The user of the application will then be able to the graph being updated based on when a new piece of data value comes in.  
 
-The user may also set a `threshold` so they can get notified of when the incoming data value is greater than the `threshold` that has been set. The input field will render a warning if a user types in non-number characters as well as numbers that are above or below -100 and 100. An error will also show if they try to submit a threshold with a non-number value. When the threshold is exceed, a `ToastContainer` component will render to the screen and will display our message and value and will unmount after 3 seconds.  
+This graph will show an X-axis that consists of a timestamp and the Y-axis will consist the incoming data value coming in. The incoming data values come in at random intervals with random numbers (constraints on these are located within the backend). The user of the application will then be able to the graph being updated based on when a new piece of data value comes in.
 
-The user may also choose to update the `threshold` if they choose and the threshold line will update.  
+The user may also set a `threshold` so they can get notified of when the incoming data value is greater than the `threshold` that has been set. The input field will render a warning if a user types in non-number characters as well as numbers that are above or below -100 and 100. An error will also show if they try to submit a threshold with a non-number value. When the threshold is exceed, a `ToastContainer` component will render to the screen and will display our message and value and will unmount after 3 seconds.
+
+The user may also choose to update the `threshold` if they choose and the threshold line will update.
 
 The user may also choose to remove the `threshold` completely if they want to remove a threshold.
 
 ### Bargraph
-This graph will show an X-axis that consists of a range of numbers in increments of 10 beginning from -100 to 100. The Y-axis is the total count each time an incoming data value is within that specific range.
 
+This graph will show an X-axis that consists of a range of numbers in increments of 10 beginning from -100 to 100. The Y-axis is the total count each time an incoming data value is within that specific range.
 
 # Task Delivery
 
